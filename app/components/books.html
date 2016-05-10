@@ -21,18 +21,24 @@
                         <button type="reset" class="btn btn-default">Reset</button>
                     </div>
                 </form>
-                <div class="list-group" >
+                <div class="list-group">
                     <div class="list-group-item" ng-repeat="book in $ctrl.list">
-                        {{book.title}}
-                        {{book.author}}
-                        <img ng-src="{{book.cover}}" alt="cover">
-                        
-                        <button type="button" class="btn btn-default" ng-click="$ctrl.editBook(book)">EDIT</button>
-                        <button type="button" class="btn btn-default" ng-click="$ctrl.removeBook(book)">DELETE</button>
-                        
+                        <div class="media">
+                            <div class="media-left">
+                                <img width="120" ng-src="{{book.cover}}" alt="cover">
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                    <h4>{{book.title}}</h4>
+                                    <p>{{book.author}}</p>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default" ng-click="$ctrl.editBook(book)">EDIT</button>
+                                        <button type="button" class="btn btn-default" ng-click="$ctrl.removeBook(book)">DELETE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         </div>
