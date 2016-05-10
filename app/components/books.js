@@ -10,12 +10,20 @@
         var booksRefs = new Firebase('https://favs15.firebaseio.com/books')
         bc.list = $firebaseArray(booksRefs)
         bc.addBook = function (book) {
-            bc.list.$add(book)
+            if(book.$id){
+                bc.list.$save(book)    
+            }else{
+                bc.list.$add(book)
+            }
             bc.newBook = null
         }
         
         bc.removeBook = function (book){
             bc.list.$remove(book)
+        }
+        
+        bc.editBook = function(book){
+            bc.newBook = book;
         }
     }
 }())

@@ -27,6 +27,7 @@
                         {{book.author}}
                         <img ng-src="{{book.cover}}" alt="cover">
                         
+                        <button type="button" class="btn btn-default" ng-click="$ctrl.editBook(book)">EDIT</button>
                         <button type="button" class="btn btn-default" ng-click="$ctrl.removeBook(book)">DELETE</button>
                         
                     </div>
