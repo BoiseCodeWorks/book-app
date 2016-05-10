@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="panel panel-defaut">
+            <div class="panel panel-heading">
+                <h1>Books Store</h1>
+
+            </div>
+            <div class="panel-body">
+                <form ng-submit="$ctrl.addBook($ctrl.newBook)" class="form">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.newBook.title">
+                        <label for="author">Author:</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.newBook.author">
+                        <label for="cover">Cover:</label>
+                        <input type="text" class="form-control" ng-model="$ctrl.newBook.cover">
+
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                    </div>
+                </form>
+                <div class="list-group" >
+                    <div class="list-group-item" ng-repeat="book in $ctrl.list">
+                        {{book.title}}
+                        {{book.author}}
+                        <img ng-src="{{book.cover}}" alt="cover">
+                        
+                        <button type="button" class="btn btn-default" ng-click="$ctrl.removeBook(book)">DELETE</button>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
